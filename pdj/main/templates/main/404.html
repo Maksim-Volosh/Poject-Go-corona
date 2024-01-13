@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Go-corona
+{% endblock %}
+
+{% block main %}
+    <main class="main">
+        <section class="page-not-found">
+            <div class="page-not-found__container decore">
+
+                <div class="page-not-found__content">
+                    <div class="page-not-found__text-block text-block">
+                        <h1 class="text-block__title text-block__title_blue">404
+                            <span>PAGE NOT FOUND</span></h1>
+                        <div class="text-block__text text-block__title_blue">Sorry, this page not found, check your url, or click on <span>"home"</span>.</div>
+                        <a href="{% url 'home' %}" class="text-block__button button">HOME</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact us
+{% endblock %}
+
+{% block button1 %}{% endblock %}
+{% block button2 %}{% endblock %}
+
+{% block main %}
+    <main class="main">
+        <section class="register">
+            <div class="register__container">
+                <div class="register-form__form animated-element-slide-lr">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="form-error">{{ form.non_field_errors }}</div>
+                        <div class="register-form__name">
+                            <p><label for="{{ form.name.id_for_label }}"></label> {{ form.name }}</p>
+                            <div class="form-error">{{ form.name.errors }}</div>
+                        </div>
+
+                        <div class="register-form__phone-number">
+                            <p><label for="{{ form.phone_number.id_for_label }}"></label> {{ form.phone_number }}</p> 
+                            <div class="form-error">{{ form.phone_number.errors }}</div>
+                        </div>
+
+                        <div class="register-form__city">
+                            <p><label for="{{ form.city.id_for_label }}"></label> {{ form.city }}</p> 
+                            <div class="form-error">{{ form.city.errors }}</div>
+                        </div>
+
+                        <div class="register-form__button">
+                            <button class="button" type="submit"  >Register for testing</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="register__content animated-element-slide-rl">
+                    <div class="register__text-block">
+                        <h1 class="text-block__title text-block__title_blue">If you suspect that you have <span>Covid-19</span>, register for a doctor's appointment in the form
+                            below</h1>
+
+                        <div class="text-block__text">Do not expect it to go away by itself, rather make an appointment with a doctor!</div>
+                    </div>
+
+                    <div class="register__form">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
